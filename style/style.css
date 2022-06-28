@@ -1,31 +1,16 @@
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
-
 
 .page-title {
-    width: fit-content;
-    margin: auto;
+  width: fit-content;
+  margin: auto;
 }
-
-.book-list {}
 
 .item {
-    list-style-type: none;
+  list-style-type: none;
 }
-
-.book-holder {}
-
-.book-title {}
 
 .book-author {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
-
-.remove-btn {}
-
-.form {}
-
-.input {}
-
-.add-btn {}
