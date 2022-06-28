@@ -19,10 +19,7 @@ function addBook (){
     const booksHolderList = document.getElementById('book_list').innerHTML= '';
     display();
     localStorage.setItem('books', JSON.stringify(books));
-    console.log(books);
 }
-
-// remove book 
 
 const add = document.getElementById('add_btn');
 add.addEventListener('click', addBook);
@@ -38,13 +35,26 @@ const booksHolderList = document.getElementById('book_list');
                             <p id="book_author">${books[i].author}</p>
                         </div>
                         <div>
-                            <button class="remove-btn" data-set="0">Remove</button>
+                            <button class="remove-btn" data-set="${i}">Remove</button>
                         </div>
                     </div>`;
         booksHolderList.appendChild(item);
     }
+    removeBook();
 }
 
+function removeBook(){
+
+    const removeBtn = document.querySelectorAll('.remove-btn');
+    removeBtn.forEach(element => {
+    element.addEventListener('click', () => {
+        books.splice(element.dataset.id ,1);
+        const booksHolderList = document.getElementById('book_list').innerHTML= '';
+        display();
+        localStorage.setItem('books', JSON.stringify(books));
+    });
+    });
+}
 
 
 
