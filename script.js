@@ -5,7 +5,7 @@ function display() {
   const booksHolderList = document.getElementById('book_list');
   for (let i = 0; i < books.length; i += 1) {
     const item = document.createElement('li');
-    item.classList='book-item';
+    item.classList = 'book-item';
     item.innerHTML = `
                     <div class="book-holder">
                         <div class="book-info-holder">
