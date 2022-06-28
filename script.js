@@ -5,14 +5,16 @@ function display() {
   const booksHolderList = document.getElementById('book_list');
   for (let i = 0; i < books.length; i += 1) {
     const item = document.createElement('li');
+    item.classList='book-item';
     item.innerHTML = `
-                    <div>
-                        <div>
-                            <h2 id="book-title">${books[i].title}</h2>
-                            <p id="book_author">${books[i].author}</p>
+                    <div class="book-holder">
+                        <div class="book-info-holder">
+                            <h2 id="book-title" class="book-title">"${books[i].title}" &nbsp</h2>
+                            <p id="book_author" class="book-author"> by ${books[i].author}</p>
                         </div>
-                        <div>
-                            <button class="remove-btn" data-set="${i}">Remove</button>
+                        <div class="btn-holder">
+                            <button class="remove-btn" data-set="${i}">
+                            <i class="fa fa-trash"></i>&nbsp; Remove</button>
                         </div>
                     </div>`;
     booksHolderList.appendChild(item);

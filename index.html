@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/style/style.css" />
-  </head>
+</head>
 
-  <body>
-    <h1>Awesome Books</h1>
-    <ul id="book_list"></ul>
-
-    <form action="">
-      <input id="title" type="text" placeholder="Title" />
-      <br />
-      <input id="author" type="text" placeholder="Author" />
-      <br />
-
-      <button id="add_btn" type="button">Add</button>
-    </form>
-
+<body>
+    <div class="container">
+        <h1 class="page-title">All awesome books</h1>
+        <ul id="book_list" class="book-list">
+            <li class="book-item">
+                <div class="book-holder">
+                    <div class="book-info-holder">
+                        <h2 id="book-title" class="book-title">"Apple" &nbsp;</h2>
+                        <p id="book_author" class="book-author">by Berkay</p>
+                    </div>
+                    <div class="btn-holder">
+                        <button class="remove-btn" data-set="${i}"> Remove</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <hr class="separator-line">
+        <h2 class="add-book-text">Add a new book</h2>
+        <form class="form">
+            <input id="title" class="input" type="text" placeholder="Title" />
+            <br />
+            <input id="author" class="input" type="text" placeholder="Author" />
+            <br />
+            <button id="add_btn" class="add-btn" type="button">Add</button>
+        </form>
+    </div>
     <script src="script.js" type="text/javascript"></script>
-  </body>
+</body>
+
 </html>
