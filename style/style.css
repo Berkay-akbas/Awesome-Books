@@ -245,6 +245,6 @@ html {
 /* footer */
 .footer {
   position: absolute;
-  bottom: 0;
+  bottom: 1%;
   margin-top: 2rem;
 }
