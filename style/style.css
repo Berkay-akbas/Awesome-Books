@@ -8,8 +8,61 @@
 
 html {
   font-size: 62.5%;
+  padding: 0.5rem;
 }
 
+/* nav bar */
+.nav-holder {
+  width: 100%;
+
+}
+
+.navigation {
+  max-width: 80rem;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+.nav-logo {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav-list-holder {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-list-holder .li:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+.nav-items {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
+  color: gray;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-items:hover {
+  color: orange;
+}
+
+.active {
+  color: black;
+  font-weight: bold;
+}
+
+
+
+/*  */
 .container {
   text-align: center;
   max-width: 80rem;
@@ -78,7 +131,18 @@ html {
 }
 
 .add-book-text {
-  font-size: 3rem;
+  font-size: 1.6rem;
+  margin: 5rem 0;
+  text-align: left;
+}
+
+.contact-holder {
+  padding-left: 3rem;
+}
+
+.contact-items {
+  font-size: 1.5rem;
+  text-align: left;
 }
 
 .form {
@@ -99,3 +163,14 @@ html {
   padding: 0.5rem 2rem;
   align-self: end;
 }
+
+.displayOff {
+  display: none;
+}
+
+.displayOn {
+  display: block;
+}
+
+/* footer */
+.footer {}

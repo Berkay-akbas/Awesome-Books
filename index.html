@@ -1,32 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Awesome book</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="/style/style.css" />
-  </head>
 
-  <body>
-    <div class="container">
-      <h1 class="page-title">All awesome books</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awesome book</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/style/style.css" />
+</head>
+
+<body>
+  <div class="nav-holder">
+    <nav class="navigation">
+      <a href="index.html" class="nav-logo">Awesome Books</a>
+      <ul class="nav-list-holder">
+        <li class="li"> <a id="list" class="nav-items active">List</a></li>
+        <li class="li"> <a id="addNew" class="nav-items">Add new</a></li>
+        <li class="li"> <a id="contact" class="nav-items">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <h1 id="pageTitle" class="page-title">All awesome books</h1>
+    <!-- List view page -->
+    <div id="listView" class="displayOff displayOn">
       <ul id="book_list" class="book-list"></ul>
-      <hr class="separator-line" />
-      <h2 class="add-book-text">Add a new book</h2>
+    </div>
+    <!-- Add new book page -->
+    <div id="newBookAdd" class="displayOff">
       <form class="form">
         <input id="title" class="input" type="text" placeholder="Title" />
         <br />
         <input id="author" class="input" type="text" placeholder="Author" />
         <br />
-        <button id="add_btn" class="add-btn" type="button">Add</button>
+        <button id="add_btn" class="add-btn" type="submit">Add</button>
       </form>
     </div>
-    <!-- <script src="script.js" type="text/javascript"></script> -->
-    <script src="app.js" type="text/javascript"></script>
-  </body>
+    <!-- contact page -->
+    <div id="contactInfo" class="displayOff">
+      <h2 class="add-book-text">Do you have any question or you just want to say "Hello"?
+        You can reach out us!
+      </h2>
+      <ul class="contact-holder">
+        <li class="contact-items">
+          Our E-mail: awesomebooks@gmail.com</li>
+        <li class="contact-items">
+          Our phone number: +1 123 456 7889
+        </li>
+        <li class="contact-items">
+          Our address: Streetname 23,84503 City, Country
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- footer -->
+  <div class="nav-holder footer">
+    <footer class="navigation">
+      <a href="index.html" class="nav-logo">&copy; Copyright ...</a>
+
+    </footer>
+  </div>
+
+  <!-- <script src="script.js" type="text/javascript"></script> -->
+  <script src="app.js" type="text/javascript"></script>
+</body>
+
 </html>

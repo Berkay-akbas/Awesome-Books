@@ -41,9 +41,11 @@ class BookList {
   // add new book
   addBook(bookTitle, bookAuthor) {
     const newBook = new BookList(bookTitle, bookAuthor);
+    if (bookTitle != '' && bookAuthor != '') {
     this.title = bookTitle;
     this.author = bookAuthor;
     library.push(newBook);
+    }
   }
 }
 
@@ -57,9 +59,70 @@ if (localStorageBookList != null) {
 }
 
 const add = document.getElementById('add_btn');
-add.addEventListener('click', () => {
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
+add.addEventListener('click', (event) => {
+  event.preventDefault();
+  let title = document.getElementById('title').value;
+  let author = document.getElementById('author').value;
   list.addBook(title, author);
   list.display();
+  // document.getElementById('title').value='';
+  // document.getElementById('author').value='';
 });
+// Single Page Application
+let pageTitle = document.querySelector('#pageTitle');
+const listBtn = document.querySelector('#list');
+const addNewBtn = document.querySelector('#addNew');
+const contactUs = document.querySelector('#contact');
+const listView = document.querySelector('#listView');
+const newBookAdd = document.querySelector('#newBookAdd');
+const contactInfo = document.querySelector('#contactInfo');
+// listBtn event listener
+listBtn.addEventListener('click', () => {
+pageTitle.innerHTML = 'All awesome books';
+if (listBtn.classList.contains('active') == false){
+  listBtn.classList.add('active');
+  listView.classList.add('displayOn');
+}
+if (addNewBtn.classList.contains('active') == true){
+  addNewBtn.classList.remove('active');
+  newBookAdd.classList.remove('displayOn')
+}
+if (contactUs.classList.contains('active') == true){
+  contactUs.classList.remove('active');
+  contactInfo.classList.remove('displayOn')
+}
+});
+// addNewBtn event listener
+addNewBtn.addEventListener('click', () => {
+pageTitle.innerHTML = 'Add new book';
+if (listBtn.classList.contains('active') == true){
+  listBtn.classList.remove('active');
+  listView.classList.remove('displayOn');
+}
+if (addNewBtn.classList.contains('active') == false){
+  addNewBtn.classList.add('active');
+  newBookAdd.classList.add('displayOn')
+}
+if (contactUs.classList.contains('active') == true){
+  contactUs.classList.remove('active');
+  contactInfo.classList.remove('displayOn')
+}
+});
+// ContactUs event listener
+contactUs.addEventListener('click', () => {
+pageTitle.innerHTML = 'Contact Information';
+if (listBtn.classList.contains('active') == true){
+  listBtn.classList.remove('active');
+  listView.classList.remove('displayOn');
+}
+if (addNewBtn.classList.contains('active') == true){
+  addNewBtn.classList.remove('active');
+  newBookAdd.classList.remove('displayOn')
+}
+if (contactUs.classList.contains('active') == false){
+  contactUs.classList.add('active');
+  contactInfo.classList.add('displayOn')
+}
+});
+
+
