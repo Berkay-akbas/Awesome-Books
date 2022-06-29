@@ -1,10 +1,4 @@
 const library = [];
-// class book {
-//   constructor(title, author) {
-//     this.title = title;
-//     this.author = author;
-//   }
-// }
 
 class BookList {
   constructor(title, author) {
@@ -68,5 +62,4 @@ add.addEventListener('click', () => {
   const author = document.getElementById('author').value;
   list.addBook(title, author);
   list.display();
-  // console.log(library);
 });
