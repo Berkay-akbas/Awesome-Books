@@ -1,16 +1,101 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 62.5%;
 }
 
-.page-title {
-  width: fit-content;
+.container {
+  text-align: center;
+  max-width: 80rem;
   margin: auto;
+  padding: 4rem;
 }
 
-.item {
+.page-title {
+  font-size: 4rem;
+}
+
+.book-holder {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.book-list {
+  border: 2px solid black;
+  margin: 4rem 0;
+}
+
+.book-item {
+  padding: 0.5rem 1rem;
   list-style-type: none;
 }
 
+.book-item:nth-child(odd) {
+  background-color: rgb(199, 199, 199);
+}
+
+.book-info-holder {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.book-title {
+  font-size: 1.6rem;
+}
+
 .book-author {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.btn-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.remove-btn {
+  padding: 0.5rem;
+}
+
+.remove-btn:hover {
+  color: red;
+}
+
+.separator-line {
+  width: 20%;
+  margin: 4rem auto;
+  background-color: black;
+}
+
+.add-book-text {
+  font-size: 3rem;
+}
+
+.form {
+  max-width: 30rem;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.add-btn {
+  padding: 0.5rem 2rem;
+  align-self: end;
 }
