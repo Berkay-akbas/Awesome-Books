@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
 html {
   font-size: 62.5%;
   padding: 0.5rem;
@@ -14,7 +19,6 @@ html {
 /* nav bar */
 .nav-holder {
   width: 100%;
-
 }
 
 .navigation {
@@ -59,8 +63,6 @@ html {
   color: black;
   font-weight: bold;
 }
-
-
 
 /*  */
 .container {
@@ -173,4 +175,8 @@ html {
 }
 
 /* footer */
-.footer {}
+.footer {
+  position: absolute;
+  bottom: 0%;
+  width: 100vw;
+}
