@@ -190,8 +190,61 @@ html {
   display: block;
 }
 
+/* popup message */
+.popup {
+  transition: all 0.5s ease-in;
+  max-width: 25rem;
+  background-color: aliceblue;
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  bottom: -12rem;
+  display: none;
+}
+
+@keyframes addBookMessage {
+  from {
+    bottom: -12rem;
+    opacity: 0;
+  }
+
+  20% {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  80% {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  to {
+    bottom: -12rem;
+    opacity: 0;
+  }
+}
+
+.motion {
+  display: block;
+  animation-name: addBookMessage;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+.popup-image {
+  color: aquamarine;
+  font-size: 4rem;
+}
+
+.popup-message {
+  font-size: 1.6rem;
+}
+
 /* footer */
 .footer {
   position: absolute;
-  bottom: 1rem;
+  bottom: 0;
+  margin-top: 2rem;
 }

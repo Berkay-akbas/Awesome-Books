@@ -77,7 +77,9 @@ const add = document.getElementById('add_btn');
 add.addEventListener('click', () => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
+  const addMessage = document.getElementById('popupMessage');
   const regX = /^[^-\s][a-zA-Z0-9_\s-]+$/;
+  const popup = document.getElementById('popup');
   let isTitleValid = false;
   let isAuthorValid = false;
   if (regX.test(title)) {
@@ -95,6 +97,14 @@ add.addEventListener('click', () => {
   }
   if (isTitleValid && isAuthorValid) {
     list.addBook(title, author);
+    popup.classList.toggle('motion');
+    addMessage.innerHTML = `Congradulations ! You have added this book ( ${title} by ${author} ) to your library successfuly.  `;
+
+    for (let i = 0; i < 1; i += 1) {
+      setTimeout(() => {
+        popup.classList.toggle('motion');
+      }, 3900);
+    }
   }
   list.display();
   document.getElementById('title').value = '';
