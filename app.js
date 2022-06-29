@@ -1,5 +1,22 @@
-const library = [];
+setInterval(() => {
+  const date = new Date();
+  const todayYear = date.getFullYear();
+  const todayMonth = date.toLocaleString('default', { month: 'long' });
+  const todayDay = date.getDate();
+  let todayHour = date.getHours();
+  let todayTimeShift = 'am';
+  if (todayHour > 12) {
+    todayHour -= 12;
+    todayTimeShift = 'pm';
+  } else {
+    todayTimeShift = 'am';
+  }
+  const todayMinute = date.getMinutes();
+  const todaySeconds = date.getSeconds();
+  document.getElementById('date').innerHTML = `${todayDay} ${todayMonth} ${todayYear}, ${todayHour}:${todayMinute}:${todaySeconds} ${todayTimeShift}`;
+}, 1000);
 
+const library = [];
 class BookList {
   constructor(title, author) {
     this.title = title;
@@ -41,11 +58,9 @@ class BookList {
   // add new book
   addBook(bookTitle, bookAuthor) {
     const newBook = new BookList(bookTitle, bookAuthor);
-    if (bookTitle != '' && bookAuthor != '') {
     this.title = bookTitle;
     this.author = bookAuthor;
     library.push(newBook);
-    }
   }
 }
 
@@ -59,17 +74,34 @@ if (localStorageBookList != null) {
 }
 
 const add = document.getElementById('add_btn');
-add.addEventListener('click', (event) => {
-  event.preventDefault();
-  let title = document.getElementById('title').value;
-  let author = document.getElementById('author').value;
-  list.addBook(title, author);
+add.addEventListener('click', () => {
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const regX = /^[^-\s][a-zA-Z0-9_\s-]+$/;
+  let isTitleValid = false;
+  let isAuthorValid = false;
+  if (regX.test(title)) {
+    document.getElementById('titleError').innerHTML = '';
+    isTitleValid = true;
+  } else {
+    document.getElementById('titleError').innerHTML = '* Please fill out Title';
+  }
+
+  if (regX.test(author)) {
+    document.getElementById('authorError').innerHTML = '';
+    isAuthorValid = true;
+  } else {
+    document.getElementById('authorError').innerHTML = '* Please fill out Title';
+  }
+  if (isTitleValid && isAuthorValid) {
+    list.addBook(title, author);
+  }
   list.display();
-  // document.getElementById('title').value='';
-  // document.getElementById('author').value='';
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
 });
 // Single Page Application
-let pageTitle = document.querySelector('#pageTitle');
+const pageTitle = document.querySelector('#pageTitle');
 const listBtn = document.querySelector('#list');
 const addNewBtn = document.querySelector('#addNew');
 const contactUs = document.querySelector('#contact');
@@ -78,51 +110,49 @@ const newBookAdd = document.querySelector('#newBookAdd');
 const contactInfo = document.querySelector('#contactInfo');
 // listBtn event listener
 listBtn.addEventListener('click', () => {
-pageTitle.innerHTML = 'All awesome books';
-if (listBtn.classList.contains('active') == false){
-  listBtn.classList.add('active');
-  listView.classList.add('displayOn');
-}
-if (addNewBtn.classList.contains('active') == true){
-  addNewBtn.classList.remove('active');
-  newBookAdd.classList.remove('displayOn')
-}
-if (contactUs.classList.contains('active') == true){
-  contactUs.classList.remove('active');
-  contactInfo.classList.remove('displayOn')
-}
+  pageTitle.innerHTML = 'All awesome books';
+  if (listBtn.classList.contains('active') === false) {
+    listBtn.classList.add('active');
+    listView.classList.add('displayOn');
+  }
+  if (addNewBtn.classList.contains('active') === true) {
+    addNewBtn.classList.remove('active');
+    newBookAdd.classList.remove('displayOn');
+  }
+  if (contactUs.classList.contains('active') === true) {
+    contactUs.classList.remove('active');
+    contactInfo.classList.remove('displayOn');
+  }
 });
 // addNewBtn event listener
 addNewBtn.addEventListener('click', () => {
-pageTitle.innerHTML = 'Add new book';
-if (listBtn.classList.contains('active') == true){
-  listBtn.classList.remove('active');
-  listView.classList.remove('displayOn');
-}
-if (addNewBtn.classList.contains('active') == false){
-  addNewBtn.classList.add('active');
-  newBookAdd.classList.add('displayOn')
-}
-if (contactUs.classList.contains('active') == true){
-  contactUs.classList.remove('active');
-  contactInfo.classList.remove('displayOn')
-}
+  pageTitle.innerHTML = 'Add new book';
+  if (listBtn.classList.contains('active') === true) {
+    listBtn.classList.remove('active');
+    listView.classList.remove('displayOn');
+  }
+  if (addNewBtn.classList.contains('active') === false) {
+    addNewBtn.classList.add('active');
+    newBookAdd.classList.add('displayOn');
+  }
+  if (contactUs.classList.contains('active') === true) {
+    contactUs.classList.remove('active');
+    contactInfo.classList.remove('displayOn');
+  }
 });
 // ContactUs event listener
 contactUs.addEventListener('click', () => {
-pageTitle.innerHTML = 'Contact Information';
-if (listBtn.classList.contains('active') == true){
-  listBtn.classList.remove('active');
-  listView.classList.remove('displayOn');
-}
-if (addNewBtn.classList.contains('active') == true){
-  addNewBtn.classList.remove('active');
-  newBookAdd.classList.remove('displayOn')
-}
-if (contactUs.classList.contains('active') == false){
-  contactUs.classList.add('active');
-  contactInfo.classList.add('displayOn')
-}
+  pageTitle.innerHTML = 'Contact Information';
+  if (listBtn.classList.contains('active') === true) {
+    listBtn.classList.remove('active');
+    listView.classList.remove('displayOn');
+  }
+  if (addNewBtn.classList.contains('active') === true) {
+    addNewBtn.classList.remove('active');
+    newBookAdd.classList.remove('displayOn');
+  }
+  if (contactUs.classList.contains('active') === false) {
+    contactUs.classList.add('active');
+    contactInfo.classList.add('displayOn');
+  }
 });
-
-

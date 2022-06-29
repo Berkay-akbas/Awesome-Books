@@ -64,12 +64,23 @@ html {
   font-weight: bold;
 }
 
-/*  */
+/* content */
 .container {
   text-align: center;
   max-width: 80rem;
   margin: auto;
-  padding: 4rem;
+  padding: 1rem 0;
+}
+
+.date-holder {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 5rem;
+  padding: 1rem;
+}
+
+.date {
+  font-size: 1.6rem;
 }
 
 .page-title {
@@ -161,6 +172,11 @@ html {
   margin: 1rem 0;
 }
 
+.error-message {
+  color: red;
+  font-size: 1.5rem;
+}
+
 .add-btn {
   padding: 0.5rem 2rem;
   align-self: end;
@@ -177,6 +193,5 @@ html {
 /* footer */
 .footer {
   position: absolute;
-  bottom: 0%;
-  width: 100vw;
+  bottom: 1rem;
 }

@@ -22,6 +22,9 @@
     </nav>
   </div>
   <div class="container">
+    <div class="date-holder">
+      <p id="date" class="date"></p>
+    </div>
     <h1 id="pageTitle" class="page-title">All awesome books</h1>
     <!-- List view page -->
     <div id="listView" class="displayOff displayOn">
@@ -31,10 +34,12 @@
     <div id="newBookAdd" class="displayOff">
       <form class="form">
         <input id="title" class="input" type="text" placeholder="Title" />
+        <small id="titleError" class="error-message"></small>
         <br />
         <input id="author" class="input" type="text" placeholder="Author" />
+        <small id="authorError" class="error-message"></small>
         <br />
-        <button id="add_btn" class="add-btn" type="submit">Add</button>
+        <button id="add_btn" class="add-btn" type="button">Add</button>
       </form>
     </div>
     <!-- contact page -->
@@ -58,7 +63,6 @@
   <div class="nav-holder footer">
     <footer class="navigation">
       <a href="index.html" class="nav-logo">&copy; Copyright ...</a>
-
     </footer>
   </div>
 
