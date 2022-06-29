@@ -16,8 +16,6 @@
 - GitHub: [@berkay-akbas](https://github.com/Berkay-akbas)
 - LinkedIn: [Berkay Akbas](https://www.linkedin.com/in/berkay-akbas-a03b3b239/)
 
-## Collaborator
-
 👤 **Alan Luqman**
 
 - GitHub: [@alanluqman](https://github.com/alanluqman)
@@ -36,6 +34,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
